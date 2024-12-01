@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h2>Mis Citas</h2>
+    <ul>
+        {% for appointment in appointments %}
+        <li>
+            Fecha: {{ appointment['date'] }} | Hora: {{ appointment['time'] }}
+            <a href="{{ url_for('routes.cancel', appointment_id=appointment['_id']) }}">Cancelar</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('routes.appointments') }}">Reservar nueva cita</a>
+</div>
+{% endblock %}
