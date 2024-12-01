@@ -1,12 +1,12 @@
 from .models import db, ChatLog
 
 def process_symptoms(symptoms):
-    # Aquí implementarías tu lógica real de chatbot
+    # lógica real de chatbot conectando con API y preprompting
     response = f"No puedo diagnosticarte, pero con base en tus síntomas ('{symptoms}'), recomiendo que consultes a un médico."
     
     # Guardar en SQL
     chat_log = ChatLog(
-        username='anonymous',  # Puedes reemplazar con el usuario real
+        username='anonymous',  # reemplazar con el usuario real
         symptoms=symptoms,
         response=response
     )
