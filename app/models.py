@@ -21,7 +21,7 @@ def cancel_appointment(username, appointment_id):
     collection = mongo.db.appointments
     collection.delete_one({'_id': appointment_id, 'username': username})
 
-# SQL: Chatbot consultas y respuestas
+# SQL: Guardar logs del chatbot
 class ChatLog(db.Model):
     __tablename__ = 'chat_logs'
     id = db.Column(db.Integer, primary_key=True)

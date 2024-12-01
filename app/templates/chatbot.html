@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
+<div class="container mt-5">
     <h2>Chatbot Médico</h2>
-    <form method="POST" action="/chatbot">
-        <label for="symptoms">Describe tus síntomas:</label>
-        <textarea id="symptoms" name="symptoms" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
+    <form method="POST">
+        <textarea name="symptoms" class="form-control mb-3" rows="5" placeholder="Describe tus síntomas aquí..."
+            required></textarea>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
     {% if response %}
-    <div class="response">
-        <h3>Respuesta del Chatbot:</h3>
-        <p>{{ response }}</p>
+    <div class="mt-4">
+        <h4>Respuesta del Chatbot:</h4>
+        <p class="alert alert-info">{{ response }}</p>
     </div>
     {% endif %}
 </div>
