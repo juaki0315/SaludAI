@@ -1,5 +1,5 @@
 import os
-import redis
+from redis import Redis
 
 class Config:
     # Clave secreta para la seguridad

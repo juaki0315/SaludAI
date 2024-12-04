@@ -15,7 +15,9 @@ def create_app():
     # Inicializar extensiones
     mongo.init_app(app)
     db.init_app(app)
-    Session(app)  # Configurar sesiones con Redis
+
+    # Configurar sesiones con Redis
+    Session(app)
 
     # Registrar rutas
     with app.app_context():

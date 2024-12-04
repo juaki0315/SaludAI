@@ -1,0 +1,56 @@
+# Entornos virtuales
+venv/
+env/
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Archivos específicos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración sensibles
+.env
+config.py
+
+# Archivos de logs
+*.log
+logs/
+
+# Archivos de bases de datos locales (SQLite)
+*.db
+*.sqlite3
+
+# Archivos generados por PyCharm/IntelliJ
+.idea/
+
+# Archivos generados por Visual Studio Code
+.vscode/
+
+# Dependencias instaladas por pip
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Archivos y directorios creados por Redis
+dump.rdb
+appendonly.aof
+
+# Directorios de desarrollo (si los usas)
+.tox/
+.coverage
+htmlcov/
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Archivos generados por Flask o Werkzeug
+instance/
+*.pid
+
+# Archivos relacionados con Docker (opcional)
+docker-compose.override.yml
+.env.docker
