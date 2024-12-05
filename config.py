@@ -6,7 +6,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'super-secret-key')
 
     # Configuración de MongoDB
-    MONGO_URI = os.environ.get('MONGO_URI', 'mongodb://localhost:27017/appointments')
+    MONGO_URI = os.environ.get('MONGO_URI', 'mongodb+srv://juaki1502:DOLym8LUvdCv4Dl3@cluster0.ntati.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 
     # Configuración de SQLAlchemy (SQLite por defecto)
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:///chatbot.db')
