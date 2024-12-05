@@ -1,5 +1,5 @@
-import os
 from redis import Redis
+import os
 
 class Config:
     # Clave secreta para la seguridad
@@ -12,11 +12,13 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:///chatbot.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    # Configuración de Redis para sesiones
+    # Configuración de Redis usando la URL proporcionada
+    REDIS_URL = os.environ.get('REDIS_URL', 'redis://default:JhYIVoAvPXzpSgweJbxdHLXfxjAwKKLK@autorack.proxy.rlwy.net:30901')
     SESSION_TYPE = 'redis'
     SESSION_PERMANENT = False
     SESSION_USE_SIGNER = True
-    SESSION_REDIS = Redis(host=os.environ.get('REDIS_HOST', 'localhost'), port=int(os.environ.get('REDIS_PORT', 6379)), decode_responses=True)
-    
+    SESSION_KEY_PREFIX = 'session:'  # Prefijo para claves relacionadas con sesiones en Redis
+    SESSION_REDIS = Redis.from_url(REDIS_URL, decode_responses=False)
+
     # Clave API para OpenAI
     OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', 'your-openai-api-key')
