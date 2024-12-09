@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Historial de Consultas</h2>
+    {% if chat_logs %}
+        <div class="mt-4">
+            {% for log in chat_logs %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Consulta realizada el {{ log.timestamp.strftime('%d/%m/%Y %H:%M:%S') }}</h5>
+                    <p><strong>Usuario:</strong> {{ log.username }}</p>
+                    <p><strong>Pregunta:</strong></p>
+                    <p class="alert alert-secondary">{{ log.prompt }}</p>
+                    <p><strong>Respuesta:</strong></p>
+                    <p class="alert alert-info">{{ log.response }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="alert alert-warning">No hay consultas registradas.</p>
+    {% endif %}
+</div>
+{% endblock %}
