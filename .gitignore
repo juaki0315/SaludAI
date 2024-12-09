@@ -54,3 +54,11 @@ instance/
 # Archivos relacionados con Docker (opcional)
 docker-compose.override.yml
 .env.docker
+
+# Archivos de migraciones innecesarios
+migrations/versions/*.pyc
+migrations/versions/__pycache__/
+
+# Backups y temporales
+*.bak
+*.swp

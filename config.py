@@ -8,8 +8,9 @@ class Config:
     # Configuración de MongoDB
     MONGO_URI = 'mongodb+srv://saludAI:qO7vQxxuHULR8K09@cluster0.ntati.mongodb.net/mi_base_datos?retryWrites=true&w=majority'
 
-    # Configuración de SQLAlchemy (SQLite por defecto)
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 'sqlite:///chatbot.db')
+    # Configuración de SQLAlchemy (usando MySQL en Railway)
+    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI', 
+        'mysql://root:JsWKYllmPDCfJsfitGzrNzydvCHVHJzm@autorack.proxy.rlwy.net:50361/railway')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Configuración de Redis usando la URL proporcionada
