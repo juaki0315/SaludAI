@@ -21,4 +21,4 @@ class Config:
     SESSION_REDIS = Redis.from_url(REDIS_URL, decode_responses=False)
 
     # Clave API para OpenAI
-    OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', 'your-openai-api-key')
+    COHERE_API_KEY = os.environ.get('COHERE_API_KEY', 't8tdhcEPH2jCMr9jnMNkYHAla5d3gB7buzcU4UUW')

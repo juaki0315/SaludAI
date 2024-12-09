@@ -42,6 +42,6 @@ def chatbot():
     response = None
     if request.method == 'POST':
         symptoms = request.form['symptoms']
-        prompt = f"Eres un médico virtual. Ayuda al usuario a entender mejor sus síntomas: {symptoms}"
+        prompt = f"Eres un chatbot que actúa como un médico virtual. Tu función es enteder los síntomas que el paciente te describa y decirle que enfermedad es posible que tenga y proponerle un tratamiento para que mejore. Si la pregunta del paciente no esta relacionada con síntomas o el ámbito de la salud, deberás contestar que eres un chatbot que solo se dedica a la salud. La consulta del paciente es la siguiente: {symptoms}"
         response = get_chatgpt_response(prompt)
     return render_template('chatbot.html', response=response, title="Chatbot Médico")
