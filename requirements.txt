@@ -11,5 +11,5 @@ redis==5.0.0
 gunicorn==20.1.0
 openai==0.28.0
 Werkzeug>=2.3.3
-cohere==4.0.0
+cohere>=4.0.1
 python-dotenv==1.0.0
